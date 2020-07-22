@@ -8,4 +8,4 @@ def test_json_not_null():
     from evse_charging_calculator import json_retrieval, constants
 
     json_retrieved = json_retrieval.get_json(constants.CONSTANTS['url'])
-    assert len(json_retrieved) > 0
+    assert json_retrieved
