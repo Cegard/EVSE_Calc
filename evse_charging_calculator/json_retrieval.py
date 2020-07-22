@@ -1,7 +1,10 @@
 
+import json
+import requests
 
-def get_json():
+
+def get_json(url):
     """ Retrieves the json data from the given URL
     """
 
-    return [0]
+    return json.loads(requests.get(url).text)
