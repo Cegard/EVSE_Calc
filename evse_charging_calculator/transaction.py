@@ -1,3 +1,4 @@
+
 from datetime import datetime
 
 
@@ -16,10 +17,10 @@ class Transaction:
         meter_value_start: float,
         metering_signature: str,
         partner_product_id: str,
-        proveider_id: str,
+        provider_id: str,
         session_id: str,
-        session_end: str,
-        session_start: str,
+        session_end: datetime,
+        session_start: datetime,
         uid: str,
     ):
         self.charging_end = charging_end
@@ -30,7 +31,7 @@ class Transaction:
         self.meter_value_start = meter_value_start
         self.metering_signature = metering_signature
         self.partner_product_id = partner_product_id
-        self.proveider_id = proveider_id
+        self.provider_id = provider_id
         self.session_id = session_id
         self.session_end = session_end
         self.session_start = session_start
