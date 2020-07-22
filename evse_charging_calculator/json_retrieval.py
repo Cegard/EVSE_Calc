@@ -3,7 +3,6 @@ from datetime import datetime
 import json
 import requests
 
-from .transaction import Transaction
 
 
 def get_json(url: str) -> dict:
@@ -16,14 +15,13 @@ def get_json(url: str) -> dict:
 def format_transaction_data(transaction_data: dict) -> dict:
     """ Transforms a raw transaction data to its proper data types
     """
-
     formated_data = {}
     formated_data['charging_end'] = datetime.fromisoformat(transaction_data['Charging end'])
     formated_data['charging_start'] = datetime.fromisoformat(transaction_data['Charging start'])
     formated_data['meter_value_end'] = float(transaction_data['Meter value end'])
     formated_data['meter_value_start'] = float(transaction_data['Meter value start'])
     formated_data["partner_product_id"] = transaction_data["Partner product ID"] \
-            if transaction_data["Partner product ID"] != "false" else ""
+            if transaction_data["Partner product ID"] else ""
     formated_data['session_end'] = datetime.fromisoformat(transaction_data['Session end'])
     formated_data['session_start'] = datetime.fromisoformat(transaction_data['Session start'])
     formated_data['country_code'] = transaction_data['CountryCode']
@@ -41,3 +39,16 @@ def get_transactions(transactions: list) -> list:
     """
 
     return map(format_transaction_data, transactions)
+
+
+def format_raw_price(raw_price: dict) -> dict:
+    """ Formats a raw supplier to its proper datatypes
+    """
+    formated_price = {}
+    formated_price['charge_based_id'] = raw_price['EVSE ID'] \
+            if raw_price['EVSE ID'] else raw_price['Product ID']
+    formated_price['identifier'] = raw_price['EVSE ID']
+    formated_price['company_name'] = raw_price['Company name']
+    formated_price['currency'] = raw_price['Currency']
+
+    return formated_price

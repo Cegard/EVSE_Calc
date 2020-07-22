@@ -1,6 +1,8 @@
 
 from datetime import datetime
 
+URL = 'https://hgy780tcj2.execute-api.eu-central-1.amazonaws.com/dev/data'
+
 DUMMY_TRANSACTION = {
     'charging_end': datetime.fromisoformat("2018-05-26T17:07:07"),
     'charging_start': datetime.fromisoformat("2018-05-26T00:05:04"),
@@ -37,3 +39,18 @@ RAW_TRANSACTIONS = [
     RAW_TRANSACTION,
     RAW_TRANSACTION
 ]
+
+SIMPLE_SUPPLIER_PRICE = {
+    'charge_based_id': "GI*BRA*H732*06",
+    'identifier': "038a0641-e0fd-40b7-bdba-de9f9ec65025",
+    'company_name': "Chausson (recreational vehicle)",
+    'currency':	["EUR", "€"]
+}
+
+SIMPLE_RAW_PRICE = {
+    'Company name': "Chausson (recreational vehicle)",
+    'Currency': ["EUR", "€"],
+    'EVSE ID': "GI*BRA*H732*06",
+    'Identifier': "038a0641-e0fd-40b7-bdba-de9f9ec65025",
+    'Product ID':	False
+}

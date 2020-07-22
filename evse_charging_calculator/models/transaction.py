@@ -2,26 +2,27 @@
 from datetime import datetime
 
 
+
 class Transaction:
     """ A charge transaction from a EVSE
     """
 
 
     def __init__(
-        self,
-        charging_end: datetime,
-        charging_start: datetime,
-        country_code: str,
-        evseid: str,
-        meter_value_end: float,
-        meter_value_start: float,
-        metering_signature: str,
-        partner_product_id: str,
-        provider_id: str,
-        session_id: str,
-        session_end: datetime,
-        session_start: datetime,
-        uid: str,
+            self,
+            charging_end: datetime,
+            charging_start: datetime,
+            country_code: str,
+            evseid: str,
+            meter_value_end: float,
+            meter_value_start: float,
+            metering_signature: str,
+            partner_product_id: str,
+            provider_id: str,
+            session_id: str,
+            session_end: datetime,
+            session_start: datetime,
+            uid: str,
     ):
         self.charging_end = charging_end
         self.charging_start = charging_start
