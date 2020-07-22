@@ -1,3 +1,6 @@
 # IDE specific files
 *.komodoproject
 .komodotools
+
+# caches
+.pytest_cache
