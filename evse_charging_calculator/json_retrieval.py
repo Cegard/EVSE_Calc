@@ -34,3 +34,10 @@ def format_transaction_data(transaction_data: dict) -> dict:
     formated_data['uid'] = transaction_data['UID']
 
     return formated_data
+
+
+def get_transactions(transactions: list) -> list:
+    """ Makes Transaction type objects from a list with raw data
+    """
+
+    return map(format_transaction_data, transactions)
